@@ -1,0 +1,71 @@
+html{
+	font-size: 48px;
+}
+
+body{
+	background-color: transparent;
+	text-align: center;
+	overflow: hidden;
+	/*-webkit-text-stroke: 1.5px white;
+	/*text-shadow:
+	-1px -1px 0 #FFF,  
+	 1px -1px 0 #FFF,
+	-1px  1px 0 #FFF,
+	 1px  1px 0 #FFF;*/
+  text-shadow:
+	-1px -1px 1px #FFF, 1px -1px 1px #FFF, -1px 1px 1px #FFF, 1px 1px 1px #FFF,
+   0px -1px 1px #FFF, 1px  0px 1px #FFF, -1px 0px 1px #FFF, 0px 1px 1px #FFF;
+}
+#content, #meta{
+	height: 100%;
+	width: 100%;
+}
+#meta{
+	position: absolute;
+	top: 10%;
+}
+#title{
+	opacity: 0;
+	font-size: 1.5em;
+}
+#artist{
+	opacity: 0;
+	font-size: 1.25em;
+}
+#lyrics {
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+}
+.line{
+	background: transparent;
+  display: none;
+	visibility: hidden;
+	position: relative;
+	margin: 0 auto;
+	white-space: nowrap;
+}
+.line.wrap{
+	white-space: normal;
+}
+.line.rtl{
+  direction: rtl;
+}
+/*.line.rtl .over {
+  text-align: right;
+  margin-right: 1px;
+}*/
+.over {
+	position: absolute;
+	color: darkorchid;
+	width: 0px;
+	top: 0px;
+	overflow: hidden;
+	text-align: left;
+	text-shadow: 0 0 transparent;
+}
+.active {
+	display: table;
+	visibility: visible;
+}

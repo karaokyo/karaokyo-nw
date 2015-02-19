@@ -1,0 +1,68 @@
+body{
+	background-color: #000;
+	overflow-x: hidden;
+}
+#playlist{
+	padding-bottom: 30px;
+	color: #9CE992;
+}
+
+#playlist div{
+	padding: 5px;
+	padding-right: 22px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 1;
+	cursor: pointer;
+}
+
+#playlist div:hover{
+	background-color: #2C551F;
+}
+
+#playlist div button{
+	display: none;
+	float: right;
+	margin: -3px;
+	padding: 0;
+	font-size: 10px;
+}
+
+#playlist div:hover button{
+	display: inline;
+}
+
+#playlist div.selected{
+	background-color: #333333;
+}
+
+#playlist div.playing{
+	color: #FFF;
+}
+
+#playlist div.invalid{
+	color: #F00;
+}
+
+#audio{
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+}
+
+.ui-dialog{
+	font-size: 15px;
+}
+
+.button{
+	display: none;
+	position: absolute;
+	right: 1px;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+.button:hover{
+	
+}

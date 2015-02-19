@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Karaokyo</title>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/handlebars-v1.3.0.js"></script>
+	<script type="text/javascript" src ="../js/underscore.js"></script>
+	<script type="text/javascript" src ="../js/backbone.js"></script>
+	<script type="text/javascript" src="../js/prototypes.js"></script>
+	<script type="text/javascript" src="../js/karaokyo.js"></script>
+	<script id="template_line" type="text/x-handlebars-template">
+		<div class="line wrap {{$.class}}" data-start="{{$.start}}" data-end="{{$.end}}">
+			{{_}}
+		</div>
+	</script>
+	<script id="template_timed" type="text/x-handlebars-template">
+		<div class="line {{$.class}}" data-start="{{$.start}}" data-end="{{$.end}}">
+			{{#timed highlight}}<span class="{{$.class}}" data-start="{{$.start}}" data-end="{{$.end}}">{{_}}</span>{{/timed}}
+		</div>
+	</script>
+</head>
+<body></body>
+</html>

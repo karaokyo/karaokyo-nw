@@ -1,0 +1,15 @@
+{
+  "name": "Karaokyo",
+  "description": "Lyric overlay application",
+  "version": "0.0.1b",
+  "main": "assets/html/dispatcher.html",
+  "single-instance": true,
+  "chromium-args": "--disable-gpu --force-cpu-draw",
+  "window": {
+    "icon": "assets/img/karaokyo-64x64.png",
+    "show": false,
+    "frame": true,
+	"toolbar": true,
+    "show_in_taskbar": true
+  }
+}

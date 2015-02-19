@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playlist</title>
+	<link rel="stylesheet" type="text/css" href="../css/global.css" />
+	<!--link rel="stylesheet" type="text/css" href="../css/karaokyo/jquery-ui.karaokyo.css" /-->
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/playlist.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.10.4.min.js"></script>
+	<script type="text/javascript" src="../js/xml2json.js"></script>
+	<script type="text/javascript" src="../js/prototypes.js"></script>
+	<script type="text/javascript" src="../js/playlist.js"></script>
+	<script type="text/javascript" src="../js/load.js"></script>
+</head>
+<body>
+	<input id="open" type="file" accept=".klf, .mp3, .ogg, .oga, .wav" class="hidden" multiple />
+	<input id="retarget" type="file" accept=".mp3, .ogg, .oga, .wav" class="hidden" />
+	<input id="loadPlaylist" type="file" accept=".kpl" class="hidden" />
+	<input id="savePlaylist" type="file" accept=".kpl" nwsaveas="playlist.kpl" class="hidden" />
+	<input id="savePlaylistWithCallback" type="file" accept=".kpl" nwsaveas="playlist.kpl" class="hidden" />
+	<div id="dialog-save" title="Save current playlist?"></div>
+	<div id="playlist"></div>
+	<audio id="audio" autoplay controls>
+	Error loading audio player.
+	</audio>
+</body>
+</html>

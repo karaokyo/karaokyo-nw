@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+	<Product Name='Karaokyo' Id='*' UpgradeCode='F27EC05D-E20A-44B1-8A40-CC705945DD0D'
+		Language='1033' Codepage='1252' Version='1.0.0' Manufacturer='Karaokyo, Inc.'>
+		<Package Id='*' Keywords='Installer' Description="Karaokyo Installer"
+			Comments='Karaokyo is a registered trademark of Karaokyo, Inc.' Manufacturer='Karaokyo, Inc.'
+			InstallerVersion='100' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+		<Media Id='1' Cabinet='karaokyo.cab' EmbedCab='yes' />
+		<Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFilesFolder'>
+        <Directory Id='INSTALLDIR' Name='Karaokyo'>
+          <Component Id='MainExecutable32' Guid='d8d0e1a9-9d78-4187-b457-50c5c99c8282'>
+            <File Id='KaraokyoEXE32' Name='karaokyo.exe' Source='karaokyo.exe' KeyPath='yes'>
+              <Shortcut Id="startmenuKaraokyo32" Directory="ProgramMenuDir" Name="Karaokyo" WorkingDirectory='INSTALLDIR' Icon="karaokyo.exe" IconIndex="0" Advertise="yes" />
+              <Shortcut Id="desktopKaraokyo32" Directory="DesktopFolder" Name="Karaokyo" WorkingDirectory='INSTALLDIR' Icon="karaokyo.exe" IconIndex="0" Advertise="yes" />
+            </File>
+            <ProgId Id='Karaokyo.klf' Description='Karaokyo Lyric File' Icon='KaraokyoEXE32' IconIndex='1'>
+              <Extension Id='klf32' ContentType='application/klf'>
+                <Verb Id='open' Command='Open' TargetFile='KaraokyoEXE32' Argument='"%1"' />
+              </Extension>
+            </ProgId>
+            <ProgId Id='Karaokyo.kpl' Description='Karaokyo Playlist' Icon='KaraokyoEXE32' IconIndex='2'>
+              <Extension Id='kpl32' ContentType='application/kpl'>
+                <Verb Id='open' Command='Open' TargetFile='KaraokyoEXE32' Argument='"%1"' />
+              </Extension>
+            </ProgId>
+          </Component>
+          <Component Id='NodeWebkitCommon' Guid='528ED8FC-9C2D-4D0D-9794-68EB72C5B9E8'>
+            <File Id='icudtlDAT' Name='icudtl.dat' Source='icudtl.dat' />
+            <File Id='nwPAK' Name='nw.pak' Source='nw.pak' />
+            <File Id='package' Name='package.json' Source='package.json' />
+          </Component>
+          <Component Id='NodeWebkit32' Guid='613CA1A8-A118-48D3-9E4E-B88F257965C1'>
+            <File Id='ffmpegsumoDLL32' Name='ffmpegsumo.dll' Source='ffmpegsumo.dll' />
+            <File Id='libeglDLL32' Name='libEGL.dll' Source='libEGL.dll' />
+            <File Id='libglesv2DLL32' Name='libGLESv2.dll' Source='libGLESv2.dll' />
+          </Component>
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder" Name="Programs">
+				<Directory Id="ProgramMenuDir" Name="Karaokyo">
+					<Component Id="ProgramMenuDir" Guid="4810B8ED-2127-4E48-A591-A43CF4DDE676">
+						<RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+						<RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+					</Component>
+				</Directory>
+			</Directory>
+			<Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+		<Feature Id='Complete' Title='Karaokyo' Description='The complete package.'
+			Display='expand' Level='1' ConfigurableDirectory='INSTALLDIR'>
+			<Feature Id='MainProgram' Title='Program' Description='The main executable.' Level='1'>
+        <ComponentRef Id='MainExecutable32' />
+				<ComponentRef Id='NodeWebkitCommon' />
+        <ComponentRef Id='NodeWebkit32' />
+				<ComponentRef Id='ProgramMenuDir' />
+				<ComponentGroupRef Id='Assets' />
+				<ComponentGroupRef Id='NodeModules' />
+			</Feature>
+		</Feature>
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+		<UIRef Id="WixUI_InstallDir" />
+		<UIRef Id="WixUI_ErrorProgressText" />
+		<Icon Id="karaokyo.exe" SourceFile="karaokyo.exe" />
+		<MajorUpgrade DowngradeErrorMessage="Can't downgrade"/>
+		<!--WixVariable Id="WixUILicenseRtf" Value="res/license.rtf"/-->
+    <WixVariable Id="WixUIDialogBmp" Value="res/main.bmp"/>
+    <WixVariable Id="WixUIBannerBmp" Value="res/banner.bmp"/>
+	</Product>
+</Wix>

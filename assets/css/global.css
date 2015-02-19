@@ -1,0 +1,21 @@
+html, body {
+	font-family: 'Noto Sans CJK Regular', Verdana, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	-webkit-user-select: none;
+}
+
+.hidden{
+	display: none;
+	visibility: hidden;
+}
+
+.container{
+  padding-top: 25px;
+}
+
+@font-face {
+	font-family: 'Noto Sans CJK Regular';
+	src: url('../fonts/NotoSansCJK-Regular.otf') format('opentype');
+}

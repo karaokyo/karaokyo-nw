@@ -1,0 +1,11 @@
+*.db
+
+#WIX
+*.wxi
+*.wxs
+*.wixobj
+*.wixpdb
+*.msi
+
+#NW
+locales/
